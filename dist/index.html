@@ -51,9 +51,8 @@
     .members-grid { display:grid; border-top:2px solid var(--ink); }
     .member { position:relative; padding:0 0 1.5rem; border-bottom:1px solid var(--line); display:grid; grid-template-columns:3rem 1fr; gap:1rem; overflow:hidden; }
     .member:last-child { border-bottom:0; }
-    .member-photo { grid-column:1/-1; position:relative; margin:0 0 .5rem; height:16rem; overflow:hidden; background:#272621; }
-    .member-photo img { width:100%; height:100%; display:block; object-fit:cover; filter:grayscale(1) contrast(1.08); transition:filter .25s,transform .45s; }
-    .member:first-child .member-photo img { object-position:center top; }
+    .member-photo { grid-column:1/-1; position:relative; margin:0 0 .5rem; height:clamp(19rem,62vw,27rem); overflow:hidden; background:#171713; }
+    .member-photo img { width:100%; height:100%; display:block; object-fit:contain; object-position:center; filter:grayscale(1) contrast(1.08); transition:filter .25s,transform .45s; }
     .member:hover .member-photo img { filter:grayscale(.15) contrast(1.04); transform:scale(1.025); }
     .member-photo figcaption { position:absolute; right:.55rem; bottom:.45rem; padding:.2rem .4rem; background:rgba(22,21,17,.78); color:var(--paper); font-size:.66rem; }
     .member-photo a { text-underline-offset:.18em; }
@@ -81,6 +80,8 @@
     .dialog-close { width:2.7rem; aspect-ratio:1; flex:0 0 auto; border:1px solid var(--paper); border-radius:50%; color:inherit; background:none; cursor:pointer; font-size:1.3rem; }
     .dialog-close:hover,.dialog-close:focus-visible { background:var(--red); outline:none; }
     .dialog-copy { margin:1.25rem 0; font-family:"Shippori Mincho",serif; font-size:1.05rem; }
+    .dialog-video { position:relative; width:100%; aspect-ratio:16/9; margin:0 0 1.25rem; overflow:hidden; border:1px solid rgba(233,224,204,.35); background:#000; }
+    .dialog-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
     .dialog-note { margin:0 0 1.25rem; padding:.8rem; border-left:3px solid var(--yellow); background:rgba(233,224,204,.08); font-size:.8rem; }
     .lyrics-link { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:.9rem 1rem; color:var(--ink); background:var(--yellow); font-weight:900; text-decoration:none; }
     .lyrics-link:hover,.lyrics-link:focus-visible { background:var(--paper); outline:2px solid var(--red); }
@@ -122,7 +123,7 @@
       .section-no { font-size:5rem; }
       .members-grid { grid-template-columns:repeat(2,1fr); border-left:2px solid var(--ink); }
       .member { min-height:28rem; padding:0 2rem 2rem; grid-template-columns:3rem 1fr; border-right:2px solid var(--ink); border-bottom:2px solid var(--ink); }
-      .member-photo { margin:0 -2rem 1rem; height:18rem; }
+      .member-photo { margin:0 -2rem 1rem; height:25rem; }
       .member:nth-last-child(-n+2) { border-bottom:0; }
       .member h3 { font-size:2rem; }
       .songs-list { grid-template-columns:repeat(2,1fr); }
@@ -166,22 +167,22 @@
     <section class="section" id="members">
       <div class="section-head" data-reveal><div><p class="eyebrow">02 — THE FOUR</p><h2>変わらない、四人。</h2></div><span class="section-no">04</span></div>
       <div class="members-grid" data-reveal>
-        <article class="member"><figure class="member-photo"><img src="https://rockinon.com/images/entry/width%3A750/205428/1" alt="黒いスーツ姿の宮本浩次" loading="lazy"><figcaption>Photo: <a href="https://rockinon.com/blog/yamazaki/205428" target="_blank" rel="noreferrer">rockin'on.com</a></figcaption></figure><span class="member-num">壱</span><div><h3>宮本 浩次</h3><p class="member-role">Vocal / Guitar</p><p>言葉を抱え、全身で歌う。激情と繊細さが同居する、バンドの声。</p></div></article>
-        <article class="member"><figure class="member-photo"><img src="https://ogre.natalie.mu/media/news/music/2017/1229/DSC_5822.jpg?imdensity=1&amp;impolicy=lt&amp;imwidth=1200" alt="ステージ衣装姿の石森敏行" loading="lazy"><figcaption>Photo: <a href="https://natalie.mu/music/gallery/news/263457/842353" target="_blank" rel="noreferrer">音楽ナタリー</a></figcaption></figure><span class="member-num">弐</span><div><h3>石森 敏行</h3><p class="member-role">Guitar</p><p>鋭さと余白を行き来するギターで、楽曲の景色を描き出す。</p></div></article>
+        <article class="member"><figure class="member-photo"><img src="https://rockinon.com/images/entry/width%3A750/171157/1" alt="ステージで片足を台にかけて熱唱する宮本浩次" loading="lazy"><figcaption>Photo: <a href="https://rockinon.com/interview/detail/171157" target="_blank" rel="noreferrer">rockin'on.com</a></figcaption></figure><span class="member-num">壱</span><div><h3>宮本 浩次</h3><p class="member-role">Vocal / Guitar</p><p>言葉を抱え、全身で歌う。激情と繊細さが同居する、バンドの声。</p></div></article>
+        <article class="member"><figure class="member-photo"><img src="https://ogre.natalie.mu/media/news/music/2017/1230/DSC_3664.jpg?imdensity=1&amp;impolicy=lt&amp;imwidth=1200" alt="ステージでギターを演奏する石森敏行の全体像" loading="lazy"><figcaption>Photo: <a href="https://natalie.mu/music/gallery/news/263510/842710" target="_blank" rel="noreferrer">音楽ナタリー</a></figcaption></figure><span class="member-num">弐</span><div><h3>石森 敏行</h3><p class="member-role">Guitar</p><p>鋭さと余白を行き来するギターで、楽曲の景色を描き出す。</p></div></article>
         <article class="member"><figure class="member-photo"><img src="https://ogre.natalie.mu/media/news/music/2017/1230/DSC_3661.jpg?imdensity=1&amp;imwidth=750" alt="ベースを演奏する高緑成治" loading="lazy"><figcaption>Photo: <a href="https://natalie.mu/music/gallery/news/263510/842711" target="_blank" rel="noreferrer">音楽ナタリー</a></figcaption></figure><span class="member-num">参</span><div><h3>高緑 成治</h3><p class="member-role">Bass</p><p>太くしなやかな低音で、激しい歌と演奏の足元を支える。</p></div></article>
-        <article class="member"><figure class="member-photo"><img src="https://yamahaartblog.lekumo.biz/backstage/images/2022/02/10/img_8394.jpg" alt="日本武道館のステージに立つ冨永義之" loading="lazy"><figcaption>Photo: <a href="https://yamahaartblog.lekumo.biz/backstage/2022/03/the-elephant-ka-3d96.html" target="_blank" rel="noreferrer">Yamaha ART</a></figcaption></figure><span class="member-num">肆</span><div><h3>冨永 義之</h3><p class="member-role">Drums</p><p>まっすぐで力強いビート。四人の呼吸を束ねる心臓部。</p></div></article>
+        <article class="member"><figure class="member-photo"><img src="https://yamahaartblog.lekumo.biz/photos/uncategorized/2010/01/12/photo.jpg" alt="ドラムセットに座る冨永義之の全体像" loading="lazy"><figcaption>Photo: <a href="https://yamahaartblog.lekumo.biz/backstage/2010/01/elephantkashima.html" target="_blank" rel="noreferrer">Yamaha ART</a></figcaption></figure><span class="member-num">肆</span><div><h3>冨永 義之</h3><p class="member-role">Drums</p><p>まっすぐで力強いビート。四人の呼吸を束ねる心臓部。</p></div></article>
       </div>
     </section>
     <section class="section songs" id="songs">
       <div class="section-head" data-reveal><div><p class="eyebrow">03 — START HERE</p><h2>はじめの七曲。</h2></div><span class="section-no">07</span></div>
       <div class="songs-list" data-reveal>
-        <button class="song" type="button" data-title="今宵の月のように" data-theme="夕暮れから夜へ移ろう東京の街と、迷いながらも輝こうとする人の決意。静かな情景と熱い感情がひとつの歌の中で交差する。" data-lyrics="https://www.uta-net.com/song/9871/"><span class="song-index">01</span><span><strong>今宵の月のように</strong><small>都会の夜と、前へ進む決意。</small></span><span class="song-tag">夜</span></button>
-        <button class="song" type="button" data-title="悲しみの果て" data-theme="悲しみを消すのではなく、その先にある日常へ戻っていく歌。簡潔な言葉とまっすぐな演奏が、再生の感触を強く残す。" data-lyrics="https://www.uta-net.com/song/2312/"><span class="song-index">02</span><span><strong>悲しみの果て</strong><small>短い言葉に宿る、再生の光。</small></span><span class="song-tag">光</span></button>
-        <button class="song" type="button" data-title="俺たちの明日" data-theme="年齢を重ね、それぞれの場所で生きる友へ送る応援歌。生活の実感を背負った言葉が、大きなサビへ駆け上がる。" data-lyrics="https://www.uta-net.com/song/58079/"><span class="song-index">03</span><span><strong>俺たちの明日</strong><small>働き、生きるすべての人へ。</small></span><span class="song-tag">明日</span></button>
-        <button class="song" type="button" data-title="風に吹かれて" data-theme="見慣れた街や今日という日に別れを告げ、次の場所へ歩き出す。穏やかなメロディの奥に、旅立つ人の覚悟がある。" data-lyrics="https://www.uta-net.com/song/9994/"><span class="song-index">04</span><span><strong>風に吹かれて</strong><small>力を抜いて歩く日の歌。</small></span><span class="song-tag">風</span></button>
-        <button class="song" type="button" data-title="ガストロンジャー" data-theme="社会と自分自身へ問いを連射する、演説のようなロック。語りと轟音がせめぎ合い、より力強い生活を求める衝動が噴き上がる。" data-lyrics="https://www.uta-net.com/song/57042/"><span class="song-index">05</span><span><strong>ガストロンジャー</strong><small>言葉と音が噴き上がる衝動。</small></span><span class="song-tag">炎</span></button>
-        <button class="song" type="button" data-title="ファイティングマン" data-theme="デビュー作の冒頭で鳴った、若き四人の宣言。荒削りな音とまっすぐな言葉に、後の歩みへ続く反骨心が刻まれている。" data-lyrics="https://www.uta-net.com/song/29936/"><span class="song-index">06</span><span><strong>ファイティングマン</strong><small>すべての始まりを告げる咆哮。</small></span><span class="song-tag">原点</span></button>
-        <button class="song" type="button" data-title="四月の風" data-theme="新しい季節の予感と、明日も生きていこうとする素朴な力。乾いた街の風が、立ち止まる心をそっと前へ運ぶ。" data-lyrics="https://www.uta-net.com/song/57046/"><span class="song-index">07</span><span><strong>四月の風</strong><small>新しい季節に背中を押す風。</small></span><span class="song-tag">春</span></button>
+        <button class="song" type="button" data-title="今宵の月のように" data-theme="夕暮れから夜へ移ろう東京の街と、迷いながらも輝こうとする人の決意。静かな情景と熱い感情がひとつの歌の中で交差する。" data-lyrics="https://www.uta-net.com/song/9871/" data-video="X--i6_53VXU"><span class="song-index">01</span><span><strong>今宵の月のように</strong><small>都会の夜と、前へ進む決意。</small></span><span class="song-tag">夜</span></button>
+        <button class="song" type="button" data-title="悲しみの果て" data-theme="悲しみを消すのではなく、その先にある日常へ戻っていく歌。簡潔な言葉とまっすぐな演奏が、再生の感触を強く残す。" data-lyrics="https://www.uta-net.com/song/2312/" data-video="H_hbF2EIWMw"><span class="song-index">02</span><span><strong>悲しみの果て</strong><small>短い言葉に宿る、再生の光。</small></span><span class="song-tag">光</span></button>
+        <button class="song" type="button" data-title="俺たちの明日" data-theme="年齢を重ね、それぞれの場所で生きる友へ送る応援歌。生活の実感を背負った言葉が、大きなサビへ駆け上がる。" data-lyrics="https://www.uta-net.com/song/58079/" data-video="cWHU2-WnZqc"><span class="song-index">03</span><span><strong>俺たちの明日</strong><small>働き、生きるすべての人へ。</small></span><span class="song-tag">明日</span></button>
+        <button class="song" type="button" data-title="風に吹かれて" data-theme="見慣れた街や今日という日に別れを告げ、次の場所へ歩き出す。穏やかなメロディの奥に、旅立つ人の覚悟がある。" data-lyrics="https://www.uta-net.com/song/9994/" data-video="3m4si2KaIuQ"><span class="song-index">04</span><span><strong>風に吹かれて</strong><small>力を抜いて歩く日の歌。</small></span><span class="song-tag">風</span></button>
+        <button class="song" type="button" data-title="ガストロンジャー" data-theme="社会と自分自身へ問いを連射する、演説のようなロック。語りと轟音がせめぎ合い、より力強い生活を求める衝動が噴き上がる。" data-lyrics="https://www.uta-net.com/song/57042/" data-video="FfRi-RIZ_YA"><span class="song-index">05</span><span><strong>ガストロンジャー</strong><small>言葉と音が噴き上がる衝動。</small></span><span class="song-tag">炎</span></button>
+        <button class="song" type="button" data-title="ファイティングマン" data-theme="デビュー作の冒頭で鳴った、若き四人の宣言。荒削りな音とまっすぐな言葉に、後の歩みへ続く反骨心が刻まれている。" data-lyrics="https://www.uta-net.com/song/29936/" data-video="49P8NCJJhpk"><span class="song-index">06</span><span><strong>ファイティングマン</strong><small>すべての始まりを告げる咆哮。</small></span><span class="song-tag">原点</span></button>
+        <button class="song" type="button" data-title="四月の風" data-theme="新しい季節の予感と、明日も生きていこうとする素朴な力。乾いた街の風が、立ち止まる心をそっと前へ運ぶ。" data-lyrics="https://www.uta-net.com/song/57046/" data-video="JbwOw5kmPt0"><span class="song-index">07</span><span><strong>四月の風</strong><small>新しい季節に背中を押す風。</small></span><span class="song-tag">春</span></button>
       </div>
     </section>
     <section class="section">
@@ -203,6 +204,7 @@
     <div class="dialog-inner">
       <div class="dialog-top"><div><p class="dialog-kicker">SONG NOTE</p><h3 id="dialog-title"></h3></div><button class="dialog-close" type="button" aria-label="閉じる">×</button></div>
       <p class="dialog-copy" id="dialog-copy"></p>
+      <div class="dialog-video"><iframe id="dialog-video" title="" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
       <p class="dialog-note">歌詞全文は著作権保護のため掲載していません。正規の歌詞掲載サービスでお楽しみください。</p>
       <a class="lyrics-link" id="lyrics-link" href="#" target="_blank" rel="noreferrer"><span>歌詞を歌ネットで読む</span><span aria-hidden="true">↗</span></a>
     </div>
@@ -217,14 +219,19 @@
     const dialogTitle = document.querySelector('#dialog-title');
     const dialogCopy = document.querySelector('#dialog-copy');
     const lyricsLink = document.querySelector('#lyrics-link');
+    const dialogVideo = document.querySelector('#dialog-video');
     document.querySelectorAll('.song').forEach((song) => song.addEventListener('click', () => {
       dialogTitle.textContent = song.dataset.title;
       dialogCopy.textContent = song.dataset.theme;
       lyricsLink.href = song.dataset.lyrics;
+      dialogVideo.title = `${song.dataset.title} 公式映像`;
+      dialogVideo.src = `https://www.youtube-nocookie.com/embed/${song.dataset.video}?rel=0`;
       dialog.showModal();
     }));
-    document.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
-    dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+    const closeDialog = () => { dialog.close(); dialogVideo.src = ''; };
+    document.querySelector('.dialog-close').addEventListener('click', closeDialog);
+    dialog.addEventListener('cancel', () => { dialogVideo.src = ''; });
+    dialog.addEventListener('click', (event) => { if (event.target === dialog) closeDialog(); });
   </script>
 </body>
 </html>
