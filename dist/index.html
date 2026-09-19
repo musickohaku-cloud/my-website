@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#161511">
+  <meta name="description" content="エレファントカシマシの歩み、メンバー、名曲をたどる非公式ファンサイト。">
+  <title>エレファントカシマシ｜明日へ走るロック</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23161511'/%3E%3Cpath d='M14 17h36v8H23v8h22v7H23v7h28v8H14z' fill='%23e34a2f'/%3E%3C/svg%3E">
+  <style>
+    :root { --ink:#161511; --paper:#e9e0cc; --red:#e34a2f; --yellow:#e9b949; --line:rgba(22,21,17,.28); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:"Zen Kaku Gothic New",sans-serif; font-size:16px; line-height:1.75; }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.18; z-index:20; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.24'/%3E%3C/svg%3E"); }
+    a { color:inherit; }
+    .skip { position:absolute; top:-4rem; left:1rem; background:#fff; padding:.7rem 1rem; z-index:99; }
+    .skip:focus { top:1rem; }
+    header { display:flex; align-items:center; justify-content:space-between; padding:1rem; border-bottom:2px solid var(--ink); background:var(--paper); }
+    .brand { font-weight:900; letter-spacing:.08em; font-size:.92rem; text-decoration:none; }
+    .menu { display:flex; gap:.25rem; }
+    .menu a { padding:.55rem .65rem; font-size:.78rem; font-weight:700; text-decoration:none; border:1px solid transparent; }
+    .menu a:hover,.menu a:focus-visible { border-color:var(--ink); outline:none; }
+    .hero { min-height:calc(100svh - 65px); padding:1.25rem 1rem 2rem; display:grid; grid-template-rows:auto 1fr auto; gap:1rem; background:var(--ink); color:var(--paper); overflow:hidden; }
+    .hero-kicker { display:flex; align-items:center; gap:.7rem; margin:0; font-size:.76rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+    .hero-kicker::before { content:""; width:2.8rem; height:3px; background:var(--red); }
+    .title-wrap { position:relative; display:flex; align-items:center; }
+    h1 { position:relative; z-index:2; margin:0; font-family:"Shippori Mincho",serif; font-size:clamp(3.15rem,15vw,7.5rem); line-height:.98; letter-spacing:-.08em; font-weight:800; }
+    h1 span { display:block; color:var(--red); transform:translateX(1.3rem); }
+    .sun { position:absolute; right:-4.5rem; top:50%; width:13rem; aspect-ratio:1; border-radius:50%; background:var(--yellow); transform:translateY(-50%); opacity:.95; }
+    .hero-foot { display:grid; grid-template-columns:1fr auto; gap:1rem; align-items:end; border-top:1px solid rgba(233,224,204,.4); padding-top:1rem; }
+    .hero-copy { margin:0; max-width:29rem; font-family:"Shippori Mincho",serif; font-size:1.05rem; font-weight:600; }
+    .stamp { width:4.8rem; aspect-ratio:1; display:grid; place-items:center; border:2px solid var(--red); border-radius:50%; color:var(--red); font-size:.72rem; font-weight:900; line-height:1.2; text-align:center; transform:rotate(8deg); }
+    .intro { padding:4.5rem 1rem; display:grid; gap:2rem; border-bottom:2px solid var(--ink); }
+    .eyebrow { margin:0 0 .7rem; font-size:.76rem; font-weight:900; letter-spacing:.15em; color:var(--red); }
+    h2 { margin:0; font-family:"Shippori Mincho",serif; font-size:clamp(2rem,9vw,4.6rem); line-height:1.2; letter-spacing:-.05em; }
+    .intro p:last-child { margin:0; font-size:1.02rem; }
+    .live-photo { margin:0; position:relative; background:var(--ink); border-bottom:2px solid var(--ink); overflow:hidden; }
+    .live-photo img { width:100%; height:65svh; min-height:28rem; display:block; object-fit:cover; object-position:center; filter:grayscale(1) contrast(1.18); opacity:.85; }
+    .live-photo::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 35%,rgba(22,21,17,.9)); }
+    .live-photo figcaption { position:absolute; z-index:2; left:1rem; right:1rem; bottom:1rem; display:flex; justify-content:space-between; align-items:end; gap:1rem; color:var(--paper); font-size:.72rem; }
+    .live-quote { max-width:14rem; font-family:"Shippori Mincho",serif; font-size:1.35rem; font-weight:700; line-height:1.45; }
+    .live-credit { text-align:right; opacity:.72; }
+    .live-credit a { text-underline-offset:.2em; }
+    .section { padding:4.5rem 1rem; border-bottom:2px solid var(--ink); }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:1rem; margin-bottom:2.2rem; }
+    .section-no { font-family:"Shippori Mincho",serif; font-weight:800; font-size:3.4rem; line-height:1; color:var(--red); }
+    .members-grid { display:grid; border-top:2px solid var(--ink); }
+    .member { position:relative; padding:1.5rem 0; border-bottom:1px solid var(--line); display:grid; grid-template-columns:3rem 1fr; gap:1rem; }
+    .member:last-child { border-bottom:0; }
+    .member-num { font-family:"Shippori Mincho",serif; color:var(--red); font-weight:700; }
+    .member h3 { margin:0 0 .2rem; font-family:"Shippori Mincho",serif; font-size:1.6rem; }
+    .member p { margin:0; font-size:.9rem; }
+    .member-role { font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .songs { color:var(--paper); background:var(--ink); }
+    .songs .section-head { border-bottom:1px solid rgba(233,224,204,.34); padding-bottom:1.6rem; }
+    .songs-list { display:grid; gap:1px; background:rgba(233,224,204,.25); border:1px solid rgba(233,224,204,.25); }
+    .song { display:grid; grid-template-columns:2.6rem 1fr auto; align-items:center; gap:.75rem; padding:1rem .8rem; background:var(--ink); transition:background .2s,color .2s; }
+    .song:hover { background:var(--red); color:white; }
+    .song-index { font-family:"Shippori Mincho",serif; color:var(--red); font-weight:800; }
+    .song:hover .song-index { color:var(--yellow); }
+    .song h3 { margin:0; font-size:1rem; }
+    .song p { margin:.1rem 0 0; font-size:.74rem; opacity:.67; }
+    .song-tag { font-size:.68rem; font-weight:700; border:1px solid currentColor; border-radius:99px; padding:.25rem .48rem; white-space:nowrap; }
+    .timeline { display:grid; gap:0; border-left:2px solid var(--ink); margin-left:.45rem; }
+    .event { position:relative; padding:0 0 2rem 1.5rem; }
+    .event:last-child { padding-bottom:0; }
+    .event::before { content:""; position:absolute; width:.75rem; aspect-ratio:1; border-radius:50%; background:var(--paper); border:2px solid var(--red); left:-.48rem; top:.45rem; }
+    .event time { color:var(--red); font-family:"Shippori Mincho",serif; font-size:1.3rem; font-weight:800; }
+    .event h3 { margin:.1rem 0 .3rem; font-size:1.05rem; }
+    .event p { margin:0; font-size:.9rem; }
+    .closing { min-height:70svh; display:grid; place-items:center; padding:5rem 1rem; text-align:center; background:var(--red); color:#fff; }
+    .closing-inner { max-width:47rem; }
+    .closing p { margin:0 auto 1rem; font-size:.78rem; font-weight:800; letter-spacing:.14em; }
+    .closing h2 { font-size:clamp(2.7rem,13vw,7.5rem); line-height:1.15; }
+    footer { padding:1.5rem 1rem 2rem; color:var(--paper); background:var(--ink); font-size:.75rem; }
+    .footer-grid { display:grid; gap:1rem; }
+    footer p { margin:0; }
+    footer a { text-underline-offset:.25em; }
+    [data-reveal] { opacity:0; transform:translateY(1.5rem); transition:opacity .65s ease,transform .65s ease; }
+    [data-reveal].visible { opacity:1; transform:none; }
+    @media (prefers-reduced-motion:reduce) { html{scroll-behavior:auto} [data-reveal]{opacity:1;transform:none;transition:none} }
+    @media (min-width:760px) {
+      header { padding:1.2rem 3vw; }
+      .brand { font-size:1rem; }
+      .menu { gap:1rem; }
+      .menu a { font-size:.9rem; }
+      .hero { padding:2rem 3vw 2.5rem; }
+      .sun { width:min(34vw,31rem); right:5vw; }
+      h1 { font-size:clamp(5rem,10.4vw,10rem); }
+      h1 span { transform:translateX(10vw); }
+      .hero-copy { font-size:1.25rem; }
+      .intro { padding:7rem 8vw; grid-template-columns:1.1fr .9fr; align-items:start; }
+      .intro p:last-child { font-size:1.15rem; padding-top:2.5rem; }
+      .live-photo img { height:78vh; }
+      .live-photo figcaption { left:3vw; right:3vw; bottom:2rem; }
+      .live-quote { max-width:34rem; font-size:2.2rem; }
+      .section { padding:7rem 8vw; }
+      .section-head { margin-bottom:3.5rem; }
+      .section-no { font-size:5rem; }
+      .members-grid { grid-template-columns:repeat(2,1fr); border-left:2px solid var(--ink); }
+      .member { min-height:15rem; padding:2rem; grid-template-columns:3rem 1fr; border-right:2px solid var(--ink); border-bottom:2px solid var(--ink); }
+      .member:nth-last-child(-n+2) { border-bottom:0; }
+      .member h3 { font-size:2rem; }
+      .songs-list { grid-template-columns:repeat(2,1fr); }
+      .song { min-height:7.5rem; padding:1.2rem; }
+      .timeline { max-width:55rem; margin:0 auto; }
+      .event { display:grid; grid-template-columns:7rem 13rem 1fr; gap:1.5rem; padding-left:2.5rem; }
+      .event time { font-size:1.6rem; }
+      .event h3 { font-size:1.15rem; }
+      .footer-grid { grid-template-columns:1fr auto; align-items:end; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">本文へ移動</a>
+  <header>
+    <a class="brand" href="#top">ELEPHANT KASHIMASHI</a>
+    <nav class="menu" aria-label="メインナビゲーション">
+      <a href="#story">軌跡</a><a href="#members">四人</a><a href="#songs">選曲</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" id="top">
+      <p class="hero-kicker">A fan archive from Akabane, Tokyo</p>
+      <div class="title-wrap">
+        <h1>エレファント<br><span>カシマシ</span></h1>
+        <div class="sun" aria-hidden="true"></div>
+      </div>
+      <div class="hero-foot">
+        <p class="hero-copy">東京の街を背に、叫び、歌い、明日へ走る。<br>四人が鳴らす、不器用でまっすぐなロック。</p>
+        <div class="stamp" aria-hidden="true">SINCE<br>1981</div>
+      </div>
+    </section>
+    <section class="intro" id="story">
+      <div><p class="eyebrow">01 — THE STORY</p><h2>赤羽から、<br>日本のロックへ。</h2></div>
+      <p>1981年、東京・北区赤羽で結成。1988年のデビュー以来、文学的な言葉と剥き出しのバンドサウンドで、時代の空気と一人ひとりの心を歌い続けてきた。静かな叙情から爆発する衝動まで——その振幅のすべてが、エレファントカシマシだ。</p>
+    </section>
+    <figure class="live-photo">
+      <img src="https://www.billboard-japan.com/scale/news/00000006/6387/800x_image.jpg" alt="ステージで歌うエレファントカシマシのライブ風景" loading="lazy">
+      <figcaption><span class="live-quote">歌は、日々を生き抜くための<br>小さくて大きな火になる。</span><span class="live-credit">Photo: <a href="https://www.billboard-japan.com/d_news/detail/6387/2" target="_blank" rel="noreferrer">Billboard JAPAN</a></span></figcaption>
+    </figure>
+    <section class="section" id="members">
+      <div class="section-head" data-reveal><div><p class="eyebrow">02 — THE FOUR</p><h2>変わらない、四人。</h2></div><span class="section-no">04</span></div>
+      <div class="members-grid" data-reveal>
+        <article class="member"><span class="member-num">壱</span><div><h3>宮本 浩次</h3><p class="member-role">Vocal / Guitar</p><p>言葉を抱え、全身で歌う。激情と繊細さが同居する、バンドの声。</p></div></article>
+        <article class="member"><span class="member-num">弐</span><div><h3>石森 敏行</h3><p class="member-role">Guitar</p><p>鋭さと余白を行き来するギターで、楽曲の景色を描き出す。</p></div></article>
+        <article class="member"><span class="member-num">参</span><div><h3>高緑 成治</h3><p class="member-role">Bass</p><p>太くしなやかな低音で、激しい歌と演奏の足元を支える。</p></div></article>
+        <article class="member"><span class="member-num">肆</span><div><h3>冨永 義之</h3><p class="member-role">Drums</p><p>まっすぐで力強いビート。四人の呼吸を束ねる心臓部。</p></div></article>
+      </div>
+    </section>
+    <section class="section songs" id="songs">
+      <div class="section-head" data-reveal><div><p class="eyebrow">03 — START HERE</p><h2>はじめの七曲。</h2></div><span class="section-no">07</span></div>
+      <div class="songs-list" data-reveal>
+        <article class="song"><span class="song-index">01</span><div><h3>今宵の月のように</h3><p>都会の夜と、前へ進む決意。</p></div><span class="song-tag">夜</span></article>
+        <article class="song"><span class="song-index">02</span><div><h3>悲しみの果て</h3><p>短い言葉に宿る、再生の光。</p></div><span class="song-tag">光</span></article>
+        <article class="song"><span class="song-index">03</span><div><h3>俺たちの明日</h3><p>働き、生きるすべての人へ。</p></div><span class="song-tag">明日</span></article>
+        <article class="song"><span class="song-index">04</span><div><h3>風に吹かれて</h3><p>力を抜いて歩く日の歌。</p></div><span class="song-tag">風</span></article>
+        <article class="song"><span class="song-index">05</span><div><h3>ガストロンジャー</h3><p>言葉と音が噴き上がる衝動。</p></div><span class="song-tag">炎</span></article>
+        <article class="song"><span class="song-index">06</span><div><h3>ファイティングマン</h3><p>すべての始まりを告げる咆哮。</p></div><span class="song-tag">原点</span></article>
+        <article class="song"><span class="song-index">07</span><div><h3>四月の風</h3><p>新しい季節に背中を押す風。</p></div><span class="song-tag">春</span></article>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-head" data-reveal><div><p class="eyebrow">04 — MILESTONES</p><h2>歩みの断片。</h2></div><span class="section-no">∞</span></div>
+      <div class="timeline" data-reveal>
+        <article class="event"><time>1981</time><h3>赤羽で結成</h3><p>東京・北区赤羽の中学の同級生を中心に、バンドが始まる。</p></article>
+        <article class="event"><time>1986</time><h3>現在の四人へ</h3><p>高緑成治が加わり、現在まで続く四人の編成がそろう。</p></article>
+        <article class="event"><time>1988</time><h3>メジャーデビュー</h3><p>シングル「デーデ」とアルバム『THE ELEPHANT KASHIMASHI』を同時発売。</p></article>
+        <article class="event"><time>1997</time><h3>広く届いた歌</h3><p>「今宵の月のように」を発表。バンドの名がさらに広く知られていく。</p></article>
+        <article class="event"><time>2007</time><h3>明日を歌う</h3><p>「俺たちの明日」を発表。世代を越えて歌い継がれる一曲に。</p></article>
+        <article class="event"><time>2017</time><h3>デビュー30周年</h3><p>47都道府県ツアーを開催。長い歩みを全国のステージで鳴らした。</p></article>
+      </div>
+    </section>
+    <section class="closing"><div class="closing-inner" data-reveal><p>ROCK'N'ROLL NEVER DIES</p><h2>さあ、<br>明日へ行こう。</h2></div></section>
+  </main>
+  <footer><div class="footer-grid"><p>非公式ファンサイト / Unofficial fan archive<br>掲載内容・画像の権利は各権利者に帰属します。</p><p>Profile reference: <a href="https://www.elephantkashimashi.com/sp/biography/" target="_blank" rel="noreferrer">Official Biography</a></p></div></footer>
+  <script>
+    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    }), { threshold: .12 });
+    document.querySelectorAll('[data-reveal]').forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>
