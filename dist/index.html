@@ -49,8 +49,14 @@
     .section-head { display:flex; align-items:end; justify-content:space-between; gap:1rem; margin-bottom:2.2rem; }
     .section-no { font-family:"Shippori Mincho",serif; font-weight:800; font-size:3.4rem; line-height:1; color:var(--red); }
     .members-grid { display:grid; border-top:2px solid var(--ink); }
-    .member { position:relative; padding:1.5rem 0; border-bottom:1px solid var(--line); display:grid; grid-template-columns:3rem 1fr; gap:1rem; }
+    .member { position:relative; padding:0 0 1.5rem; border-bottom:1px solid var(--line); display:grid; grid-template-columns:3rem 1fr; gap:1rem; overflow:hidden; }
     .member:last-child { border-bottom:0; }
+    .member-photo { grid-column:1/-1; position:relative; margin:0 0 .5rem; height:16rem; overflow:hidden; background:#272621; }
+    .member-photo img { width:100%; height:100%; display:block; object-fit:cover; filter:grayscale(1) contrast(1.08); transition:filter .25s,transform .45s; }
+    .member:first-child .member-photo img { object-position:center top; }
+    .member:hover .member-photo img { filter:grayscale(.15) contrast(1.04); transform:scale(1.025); }
+    .member-photo figcaption { position:absolute; right:.55rem; bottom:.45rem; padding:.2rem .4rem; background:rgba(22,21,17,.78); color:var(--paper); font-size:.66rem; }
+    .member-photo a { text-underline-offset:.18em; }
     .member-num { font-family:"Shippori Mincho",serif; color:var(--red); font-weight:700; }
     .member h3 { margin:0 0 .2rem; font-family:"Shippori Mincho",serif; font-size:1.6rem; }
     .member p { margin:0; font-size:.9rem; }
@@ -58,13 +64,26 @@
     .songs { color:var(--paper); background:var(--ink); }
     .songs .section-head { border-bottom:1px solid rgba(233,224,204,.34); padding-bottom:1.6rem; }
     .songs-list { display:grid; gap:1px; background:rgba(233,224,204,.25); border:1px solid rgba(233,224,204,.25); }
-    .song { display:grid; grid-template-columns:2.6rem 1fr auto; align-items:center; gap:.75rem; padding:1rem .8rem; background:var(--ink); transition:background .2s,color .2s; }
-    .song:hover { background:var(--red); color:white; }
+    .song { width:100%; border:0; color:inherit; font:inherit; text-align:left; cursor:pointer; display:grid; grid-template-columns:2.6rem 1fr auto; align-items:center; gap:.75rem; padding:1rem .8rem; background:var(--ink); transition:background .2s,color .2s; }
+    .song:hover,.song:focus-visible { background:var(--red); color:white; outline:2px solid var(--yellow); outline-offset:-2px; }
     .song-index { font-family:"Shippori Mincho",serif; color:var(--red); font-weight:800; }
-    .song:hover .song-index { color:var(--yellow); }
-    .song h3 { margin:0; font-size:1rem; }
-    .song p { margin:.1rem 0 0; font-size:.74rem; opacity:.67; }
+    .song:hover .song-index,.song:focus-visible .song-index { color:var(--yellow); }
+    .song strong { display:block; font-size:1rem; }
+    .song small { display:block; margin-top:.1rem; font-size:.875rem; opacity:.67; }
     .song-tag { font-size:.68rem; font-weight:700; border:1px solid currentColor; border-radius:99px; padding:.25rem .48rem; white-space:nowrap; }
+    .song::after { content:"＋"; display:none; }
+    .song-dialog { width:min(92vw,38rem); padding:0; border:2px solid var(--paper); color:var(--paper); background:var(--ink); box-shadow:1rem 1rem 0 var(--red); }
+    .song-dialog::backdrop { background:rgba(0,0,0,.78); backdrop-filter:blur(3px); }
+    .dialog-inner { padding:1.25rem; }
+    .dialog-top { display:flex; justify-content:space-between; align-items:start; gap:1rem; border-bottom:1px solid rgba(233,224,204,.35); padding-bottom:1rem; }
+    .dialog-kicker { margin:0 0 .25rem; color:var(--red); font-size:.72rem; font-weight:900; letter-spacing:.14em; }
+    .song-dialog h3 { margin:0; font-family:"Shippori Mincho",serif; font-size:clamp(1.7rem,8vw,2.8rem); line-height:1.2; }
+    .dialog-close { width:2.7rem; aspect-ratio:1; flex:0 0 auto; border:1px solid var(--paper); border-radius:50%; color:inherit; background:none; cursor:pointer; font-size:1.3rem; }
+    .dialog-close:hover,.dialog-close:focus-visible { background:var(--red); outline:none; }
+    .dialog-copy { margin:1.25rem 0; font-family:"Shippori Mincho",serif; font-size:1.05rem; }
+    .dialog-note { margin:0 0 1.25rem; padding:.8rem; border-left:3px solid var(--yellow); background:rgba(233,224,204,.08); font-size:.8rem; }
+    .lyrics-link { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:.9rem 1rem; color:var(--ink); background:var(--yellow); font-weight:900; text-decoration:none; }
+    .lyrics-link:hover,.lyrics-link:focus-visible { background:var(--paper); outline:2px solid var(--red); }
     .timeline { display:grid; gap:0; border-left:2px solid var(--ink); margin-left:.45rem; }
     .event { position:relative; padding:0 0 2rem 1.5rem; }
     .event:last-child { padding-bottom:0; }
@@ -102,7 +121,8 @@
       .section-head { margin-bottom:3.5rem; }
       .section-no { font-size:5rem; }
       .members-grid { grid-template-columns:repeat(2,1fr); border-left:2px solid var(--ink); }
-      .member { min-height:15rem; padding:2rem; grid-template-columns:3rem 1fr; border-right:2px solid var(--ink); border-bottom:2px solid var(--ink); }
+      .member { min-height:28rem; padding:0 2rem 2rem; grid-template-columns:3rem 1fr; border-right:2px solid var(--ink); border-bottom:2px solid var(--ink); }
+      .member-photo { margin:0 -2rem 1rem; height:18rem; }
       .member:nth-last-child(-n+2) { border-bottom:0; }
       .member h3 { font-size:2rem; }
       .songs-list { grid-template-columns:repeat(2,1fr); }
@@ -146,22 +166,22 @@
     <section class="section" id="members">
       <div class="section-head" data-reveal><div><p class="eyebrow">02 — THE FOUR</p><h2>変わらない、四人。</h2></div><span class="section-no">04</span></div>
       <div class="members-grid" data-reveal>
-        <article class="member"><span class="member-num">壱</span><div><h3>宮本 浩次</h3><p class="member-role">Vocal / Guitar</p><p>言葉を抱え、全身で歌う。激情と繊細さが同居する、バンドの声。</p></div></article>
-        <article class="member"><span class="member-num">弐</span><div><h3>石森 敏行</h3><p class="member-role">Guitar</p><p>鋭さと余白を行き来するギターで、楽曲の景色を描き出す。</p></div></article>
-        <article class="member"><span class="member-num">参</span><div><h3>高緑 成治</h3><p class="member-role">Bass</p><p>太くしなやかな低音で、激しい歌と演奏の足元を支える。</p></div></article>
-        <article class="member"><span class="member-num">肆</span><div><h3>冨永 義之</h3><p class="member-role">Drums</p><p>まっすぐで力強いビート。四人の呼吸を束ねる心臓部。</p></div></article>
+        <article class="member"><figure class="member-photo"><img src="https://rockinon.com/images/entry/width%3A750/205428/1" alt="黒いスーツ姿の宮本浩次" loading="lazy"><figcaption>Photo: <a href="https://rockinon.com/blog/yamazaki/205428" target="_blank" rel="noreferrer">rockin'on.com</a></figcaption></figure><span class="member-num">壱</span><div><h3>宮本 浩次</h3><p class="member-role">Vocal / Guitar</p><p>言葉を抱え、全身で歌う。激情と繊細さが同居する、バンドの声。</p></div></article>
+        <article class="member"><figure class="member-photo"><img src="https://ogre.natalie.mu/media/news/music/2017/1229/DSC_5822.jpg?imdensity=1&amp;impolicy=lt&amp;imwidth=1200" alt="ステージ衣装姿の石森敏行" loading="lazy"><figcaption>Photo: <a href="https://natalie.mu/music/gallery/news/263457/842353" target="_blank" rel="noreferrer">音楽ナタリー</a></figcaption></figure><span class="member-num">弐</span><div><h3>石森 敏行</h3><p class="member-role">Guitar</p><p>鋭さと余白を行き来するギターで、楽曲の景色を描き出す。</p></div></article>
+        <article class="member"><figure class="member-photo"><img src="https://ogre.natalie.mu/media/news/music/2017/1230/DSC_3661.jpg?imdensity=1&amp;imwidth=750" alt="ベースを演奏する高緑成治" loading="lazy"><figcaption>Photo: <a href="https://natalie.mu/music/gallery/news/263510/842711" target="_blank" rel="noreferrer">音楽ナタリー</a></figcaption></figure><span class="member-num">参</span><div><h3>高緑 成治</h3><p class="member-role">Bass</p><p>太くしなやかな低音で、激しい歌と演奏の足元を支える。</p></div></article>
+        <article class="member"><figure class="member-photo"><img src="https://yamahaartblog.lekumo.biz/backstage/images/2022/02/10/img_8394.jpg" alt="日本武道館のステージに立つ冨永義之" loading="lazy"><figcaption>Photo: <a href="https://yamahaartblog.lekumo.biz/backstage/2022/03/the-elephant-ka-3d96.html" target="_blank" rel="noreferrer">Yamaha ART</a></figcaption></figure><span class="member-num">肆</span><div><h3>冨永 義之</h3><p class="member-role">Drums</p><p>まっすぐで力強いビート。四人の呼吸を束ねる心臓部。</p></div></article>
       </div>
     </section>
     <section class="section songs" id="songs">
       <div class="section-head" data-reveal><div><p class="eyebrow">03 — START HERE</p><h2>はじめの七曲。</h2></div><span class="section-no">07</span></div>
       <div class="songs-list" data-reveal>
-        <article class="song"><span class="song-index">01</span><div><h3>今宵の月のように</h3><p>都会の夜と、前へ進む決意。</p></div><span class="song-tag">夜</span></article>
-        <article class="song"><span class="song-index">02</span><div><h3>悲しみの果て</h3><p>短い言葉に宿る、再生の光。</p></div><span class="song-tag">光</span></article>
-        <article class="song"><span class="song-index">03</span><div><h3>俺たちの明日</h3><p>働き、生きるすべての人へ。</p></div><span class="song-tag">明日</span></article>
-        <article class="song"><span class="song-index">04</span><div><h3>風に吹かれて</h3><p>力を抜いて歩く日の歌。</p></div><span class="song-tag">風</span></article>
-        <article class="song"><span class="song-index">05</span><div><h3>ガストロンジャー</h3><p>言葉と音が噴き上がる衝動。</p></div><span class="song-tag">炎</span></article>
-        <article class="song"><span class="song-index">06</span><div><h3>ファイティングマン</h3><p>すべての始まりを告げる咆哮。</p></div><span class="song-tag">原点</span></article>
-        <article class="song"><span class="song-index">07</span><div><h3>四月の風</h3><p>新しい季節に背中を押す風。</p></div><span class="song-tag">春</span></article>
+        <button class="song" type="button" data-title="今宵の月のように" data-theme="夕暮れから夜へ移ろう東京の街と、迷いながらも輝こうとする人の決意。静かな情景と熱い感情がひとつの歌の中で交差する。" data-lyrics="https://www.uta-net.com/song/9871/"><span class="song-index">01</span><span><strong>今宵の月のように</strong><small>都会の夜と、前へ進む決意。</small></span><span class="song-tag">夜</span></button>
+        <button class="song" type="button" data-title="悲しみの果て" data-theme="悲しみを消すのではなく、その先にある日常へ戻っていく歌。簡潔な言葉とまっすぐな演奏が、再生の感触を強く残す。" data-lyrics="https://www.uta-net.com/song/2312/"><span class="song-index">02</span><span><strong>悲しみの果て</strong><small>短い言葉に宿る、再生の光。</small></span><span class="song-tag">光</span></button>
+        <button class="song" type="button" data-title="俺たちの明日" data-theme="年齢を重ね、それぞれの場所で生きる友へ送る応援歌。生活の実感を背負った言葉が、大きなサビへ駆け上がる。" data-lyrics="https://www.uta-net.com/song/58079/"><span class="song-index">03</span><span><strong>俺たちの明日</strong><small>働き、生きるすべての人へ。</small></span><span class="song-tag">明日</span></button>
+        <button class="song" type="button" data-title="風に吹かれて" data-theme="見慣れた街や今日という日に別れを告げ、次の場所へ歩き出す。穏やかなメロディの奥に、旅立つ人の覚悟がある。" data-lyrics="https://www.uta-net.com/song/9994/"><span class="song-index">04</span><span><strong>風に吹かれて</strong><small>力を抜いて歩く日の歌。</small></span><span class="song-tag">風</span></button>
+        <button class="song" type="button" data-title="ガストロンジャー" data-theme="社会と自分自身へ問いを連射する、演説のようなロック。語りと轟音がせめぎ合い、より力強い生活を求める衝動が噴き上がる。" data-lyrics="https://www.uta-net.com/song/57042/"><span class="song-index">05</span><span><strong>ガストロンジャー</strong><small>言葉と音が噴き上がる衝動。</small></span><span class="song-tag">炎</span></button>
+        <button class="song" type="button" data-title="ファイティングマン" data-theme="デビュー作の冒頭で鳴った、若き四人の宣言。荒削りな音とまっすぐな言葉に、後の歩みへ続く反骨心が刻まれている。" data-lyrics="https://www.uta-net.com/song/29936/"><span class="song-index">06</span><span><strong>ファイティングマン</strong><small>すべての始まりを告げる咆哮。</small></span><span class="song-tag">原点</span></button>
+        <button class="song" type="button" data-title="四月の風" data-theme="新しい季節の予感と、明日も生きていこうとする素朴な力。乾いた街の風が、立ち止まる心をそっと前へ運ぶ。" data-lyrics="https://www.uta-net.com/song/57046/"><span class="song-index">07</span><span><strong>四月の風</strong><small>新しい季節に背中を押す風。</small></span><span class="song-tag">春</span></button>
       </div>
     </section>
     <section class="section">
@@ -170,19 +190,41 @@
         <article class="event"><time>1981</time><h3>赤羽で結成</h3><p>東京・北区赤羽の中学の同級生を中心に、バンドが始まる。</p></article>
         <article class="event"><time>1986</time><h3>現在の四人へ</h3><p>高緑成治が加わり、現在まで続く四人の編成がそろう。</p></article>
         <article class="event"><time>1988</time><h3>メジャーデビュー</h3><p>シングル「デーデ」とアルバム『THE ELEPHANT KASHIMASHI』を同時発売。</p></article>
+        <article class="event"><time>1994</time><h3>契約終了、空白の時期へ</h3><p>アルバム『東京の空』を最後にEPIC SONYとの契約が終了。約一年のフリー期間を経て、再び前線へ戻る道を探った。</p></article>
         <article class="event"><time>1997</time><h3>広く届いた歌</h3><p>「今宵の月のように」を発表。バンドの名がさらに広く知られていく。</p></article>
         <article class="event"><time>2007</time><h3>明日を歌う</h3><p>「俺たちの明日」を発表。世代を越えて歌い継がれる一曲に。</p></article>
         <article class="event"><time>2017</time><h3>デビュー30周年</h3><p>47都道府県ツアーを開催。長い歩みを全国のステージで鳴らした。</p></article>
+        <article class="event"><time>2019</time><h3>宮本浩次、ソロ始動</h3><p>宮本浩次がソロプロジェクトを開始。「冬の花」を発表し、バンドと並行する新たな表現の旅へ踏み出した。</p></article>
       </div>
     </section>
     <section class="closing"><div class="closing-inner" data-reveal><p>ROCK'N'ROLL NEVER DIES</p><h2>さあ、<br>明日へ行こう。</h2></div></section>
   </main>
+  <dialog class="song-dialog" id="song-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-inner">
+      <div class="dialog-top"><div><p class="dialog-kicker">SONG NOTE</p><h3 id="dialog-title"></h3></div><button class="dialog-close" type="button" aria-label="閉じる">×</button></div>
+      <p class="dialog-copy" id="dialog-copy"></p>
+      <p class="dialog-note">歌詞全文は著作権保護のため掲載していません。正規の歌詞掲載サービスでお楽しみください。</p>
+      <a class="lyrics-link" id="lyrics-link" href="#" target="_blank" rel="noreferrer"><span>歌詞を歌ネットで読む</span><span aria-hidden="true">↗</span></a>
+    </div>
+  </dialog>
   <footer><div class="footer-grid"><p>非公式ファンサイト / Unofficial fan archive<br>掲載内容・画像の権利は各権利者に帰属します。</p><p>Profile reference: <a href="https://www.elephantkashimashi.com/sp/biography/" target="_blank" rel="noreferrer">Official Biography</a></p></div></footer>
   <script>
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
       if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
     }), { threshold: .12 });
     document.querySelectorAll('[data-reveal]').forEach((element) => observer.observe(element));
+    const dialog = document.querySelector('#song-dialog');
+    const dialogTitle = document.querySelector('#dialog-title');
+    const dialogCopy = document.querySelector('#dialog-copy');
+    const lyricsLink = document.querySelector('#lyrics-link');
+    document.querySelectorAll('.song').forEach((song) => song.addEventListener('click', () => {
+      dialogTitle.textContent = song.dataset.title;
+      dialogCopy.textContent = song.dataset.theme;
+      lyricsLink.href = song.dataset.lyrics;
+      dialog.showModal();
+    }));
+    document.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
   </script>
 </body>
 </html>
